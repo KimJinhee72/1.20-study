@@ -84,7 +84,6 @@ nav .depth2 > li > a {
     background-color: #444;
     color: #fff;
     font-size: 18px;
-    display: block;
 }
 .mobile-nav .depth2{
     display: none;
