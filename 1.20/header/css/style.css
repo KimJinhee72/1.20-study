@@ -1,0 +1,145 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.header {
+  display: flex;
+  height: 90px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: antiquewhite;
+}
+/* 로고 */
+.logo {
+  width: 10%;
+  max-width: 150px;
+  min-width: 100px;
+  background-color: aquamarine;
+}
+.logo img {
+  display: block;
+  width: 100%;
+}
+/* 메뉴 */
+nav {
+  width: 50%;
+  max-width: 750px;
+  background-color: rgb(255, 240, 127);
+}
+nav .gnb {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+nav .gnb > li {
+  position: relative;
+  width: calc(100% / 4);
+  text-align: center;
+}
+nav .gnb > li > a {
+    width: 100%;
+    display: block;
+    background-color: red;
+}
+nav .gnb:hover .depth2 {
+    display: block;
+}
+nav .depth2 {
+    width: 100%;
+    position: absolute;
+    top: 60px;
+        display: none;
+    background-color: rgb(231, 231, 255);
+}
+nav .depth2 > li > a {
+    line-height: 50px;
+}
+/* 모바일용 메뉴 */
+.mobile-nav{
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100vh;
+    padding-top: 60px;
+    background-color: #333;
+}
+.mobile-nav .gnb{
+    display: flex;
+    flex-direction: column;
+}
+.mobile-nav .gnb > li > a{
+    display: block;
+    padding: 15px;
+    background-color: #444;
+    color: #fff;
+    font-size: 18px;
+}
+.mobile-nav .depth2{
+    display: none;
+}
+
+.mobile-nav .depth2 > li > a {
+    display: block;
+    padding: 10px;
+    background-color: #666;
+    color: white;
+    font-size: 16px;
+  }
+
+/* X 버튼 */
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+/* 사용자 아이콘 */
+.user {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 15%;
+  max-width: 200px;
+  min-width: 150px;
+  background-color: rgb(232, 127, 255);
+}
+.user li {
+  width: calc(100% / 3);
+}
+.mb-xi {
+  display: none;
+}
+/* 반응형 */
+@media screen and (max-width: 672px) {
+  nav .gnb {
+    display: none;
+  }
+  .mb-xi {
+    display: block;
+  }
+  .user{
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 390px){
+.header{
+    padding: 0 20px;
+}
+.user{
+    gap: 0px;
+  }
+}
