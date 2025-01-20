@@ -1,14 +1,138 @@
 @charset "utf-8";
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-ul, li {
-    list-style: none;
+u,
+li {
+  list-style: none;
 }
-a{
-    cursor: pointer;
-    text-decoration: none;
-    color: #333;
+a {
+  text-decoration: none;
+  color: #333;
+}
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+nav > a:hover{
+    text-decoration: underline;
+}
+.navIcon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#menu {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    
+}
+/* 아무것도 해준게 없어서 가상공간을 씀 */
+#menu::after{
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    display: block;
+    content: "";
+    width: 34px;
+    height: 34px;
+    transition: all 0.3;
+    opacity: 0;
+    border-radius: 50%;
+    background-color: rgba(217, 206, 206, 0.3);
+}
+#menu:hover::after{
+    opacity: 1;
+}
+#menu::before{
+    content: attr(aria-label);/*aria-label값 사용*/
+    background-color: rgba(0, 0,0 ,0.5);
+    border-radius: 10px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    font-size: 12px;
+    opacity: 0;
+    /* 공간없을때 텍스트 줄바꿈 방지 */
+    white-space: nowrap;
+    transition: all .3;
+}
+#menu:hover::before{
+    opacity: 1;
+}
+#menu svg{
+    position: relative;
+    width: 100%;
+    opacity: .7;
+}
+/* 로그인 */
+#login{
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: #4484f3;
+    border: 0;
+    border-radius: 3px;
+}
+.main-wrap{
+    margin-top: 200px;
+    text-align: center;
+}
+/* 검색 바 */
+.search-bar{
+    width: 70%;
+    max-width: 560px;
+    min-width: 330px;
+    margin: 30px auto;
+    background-color:#fff;
+    border: 1px solid #ccc;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.search-bar i{
+   
+}
+.search-bar input{
+    width: 60%;
+    padding: 5px;
+    border: none;
+    /* 클릭해도 라인 없음 */
+    outline: none;
+}
+.search-icon{
+    width: 10%;
+    min-width: 48px;
+    display: flex;
+    gap: 5px;
+}
+.search-bar a{ 
+    width: calc(100% / 2);    
+}
+.search-bar a img{
+    width: 100%;
+}
+/* 반응형 */
+@media screen and (max-width: 390px) {
+    .search-bar{
+        padding: 5px 15px;
+    }
+    
 }
